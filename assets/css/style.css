@@ -2,11 +2,11 @@ body {
     margin:0;
     background-color: #181818;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: grey;
+    color: grey !important;
 }
 
 a {
-    color: grey; 
+    color: grey !important; 
 }
 
 header {
@@ -16,7 +16,6 @@ header {
     width: 100%;
     z-index: 100;
     top: 0;
-    height: 60px;
 }
 
 header ul {
@@ -53,7 +52,6 @@ header .menu {
 }
 
 header .menu-icon {
-    /* border: 1px solid red; */
     padding: 28px 20px;
     position: relative;
     float: right;   
@@ -123,4 +121,37 @@ header .menu-btn:checked + .menu-icon .menu-icon-bar::after {
     header .menu-icon {
         display: none;
     }
+}
+.showcase {
+    min-height: 100vh;
+    background: url('/assets/img/pexels-jievani-64453116-8185629.jpg') no-repeat center center/cover;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    padding-top: 160px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, .3);
+}
+
+.blockquote-footer {
+    color: grey !important;
+    font-style: italic;
+    padding-top: 8px;
+}       
+.showcase-content {
+    background-color: rgba(255, 255, 255, 0.8);
+    display: inline-block;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.about {
+    padding: 60px 20px;
+    background-color: #212121;
+    text-align: center;
+}   
+.about-content {
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: left;
+    padding: 0 20px;
+    color: grey;
 }
