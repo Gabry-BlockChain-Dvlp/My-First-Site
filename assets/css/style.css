@@ -123,7 +123,7 @@ header .menu-btn:checked + .menu-icon .menu-icon-bar::after {
     }
 }
 .showcase {
-    min-height: 100vh;
+    height: 100vh;
     background: url('/assets/img/pexels-jievani-64453116-8185629.jpg') no-repeat center center/cover;
     text-align: center;
     color: rgb(0, 0, 0);
@@ -154,4 +154,62 @@ header .menu-btn:checked + .menu-icon .menu-icon-bar::after {
     text-align: left;
     padding: 0 20px;
     color: grey;
+}
+
+/* .projects-content { 
+    color: grey;
+    margin-left: 40px;
+}    */
+
+.projects-content {
+    padding: 60px 20px;
+    background-color: #181818;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+.project-item1 {
+    background: url('/assets/img/blockchain\ basata\ su\ ethereum\ in\ un\ contesto\ food.jpg') no-repeat center center/cover;
+    background-color: #212121;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    color: black;
+    width: 100%;
+    height: 50vh;
+    transition: transform 0.3s ease, 
+                box-shadow 0.3s ease;
+    transform: translateY(0);
+}
+
+.project-item2 {
+    background: url('/assets/img/aHR0cHM6Ly9lbGVtZW50YWxzLWltYWdlcy5henVraS5jb20vN2E3YWEyZWEtZTQ5Yi00OGJmLWFiYTYtMGU3YzRmYmIzNDBhLnBuZw==.avif') no-repeat center center/cover;
+    background-color: #212121;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    color: black;
+    width: 100%;
+    height: 50vh;
+    transition: transform 0.3s ease, 
+                box-shadow 0.3s ease;
+    transform: translateY(0);
+}
+
+.Description {
+    background-color: rgba(255, 255, 255, 0.8);
+    display: inline-block;
+    padding: 20px;
+    border-radius: 10px;
+}   
+
+.project-item1:hover, .project-item2:hover {
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, .3);
+    transform: scale(1.05);
 }
