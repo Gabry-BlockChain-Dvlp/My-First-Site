@@ -156,18 +156,11 @@ header .menu-btn:checked + .menu-icon .menu-icon-bar::after {
     color: grey;
 }
 
-/* .projects-content { 
-    color: grey;
-    margin-left: 40px;
-}    */
 
-.projects-content {
+#projects-content {
     padding: 60px 20px;
     background-color: #181818;
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100%;
     height: auto;
 }
@@ -175,12 +168,11 @@ header .menu-btn:checked + .menu-icon .menu-icon-bar::after {
 .project-item1 {
     background: url('/assets/img/blockchain\ basata\ su\ ethereum\ in\ un\ contesto\ food.jpg') no-repeat center center/cover;
     background-color: #212121;
-    margin: 20px auto;
+    margin: 70px 40px;
     padding: 20px;
     border-radius: 10px;
-    max-width: 500px;
     color: black;
-    width: 100%;
+    width: auto;
     height: 50vh;
     transition: transform 0.3s ease, 
                 box-shadow 0.3s ease;
@@ -190,12 +182,11 @@ header .menu-btn:checked + .menu-icon .menu-icon-bar::after {
 .project-item2 {
     background: url('/assets/img/aHR0cHM6Ly9lbGVtZW50YWxzLWltYWdlcy5henVraS5jb20vN2E3YWEyZWEtZTQ5Yi00OGJmLWFiYTYtMGU3YzRmYmIzNDBhLnBuZw==.avif') no-repeat center center/cover;
     background-color: #212121;
-    margin: 20px auto;
+    margin: 70px 40px;
     padding: 20px;
     border-radius: 10px;
-    max-width: 500px;
     color: black;
-    width: 100%;
+    width: auto;
     height: 50vh;
     transition: transform 0.3s ease, 
                 box-shadow 0.3s ease;
@@ -207,6 +198,7 @@ header .menu-btn:checked + .menu-icon .menu-icon-bar::after {
     display: inline-block;
     padding: 20px;
     border-radius: 10px;
+    overflow:auto;
 }   
 
 .project-item1:hover, .project-item2:hover {
