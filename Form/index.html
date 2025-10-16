@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon-16x16.png">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="./styleForm.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+    <main id="contact" class="contact-wrapper">
+        <section class="contact-card">
+            <h1>Contact Me</h1>
+            <p class="contact-subtitle">Compila il form per inviarmi un messaggio.</p>
+            <form class="contact-form" id="contact-form" action="" method="post" novalidate onsubmit="sendEmail(event)">
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="firstName">Nome</label>
+                        <input type="text" id="firstName" name="firstName" placeholder="Inserisci il tuo nome" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="lastName">Cognome</label>
+                        <input type="text" id="lastName" name="lastName" placeholder="Inserisci il tuo cognome" required>
+                    </div>
+                </div>
+                <div class="form-field">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="nome@esempio.com" required>
+                </div>
+                <div class="form-field">
+                    <label for="message">Descrizione della richiesta</label>
+                    <textarea id="message" name="message" rows="6" placeholder="Scrivi qui la tua richiesta" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Invia</button>
+            </form>
+        </section>
+    </main>
+    
+    <script>
+        (function() {
+            emailjs.init("oDevLl9tUgfoxv05G");
+        })();
+        
+        function sendEmail(event) {
+            event.preventDefault();
+            
+            const submitBtn = document.querySelector('.btn-primary');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Invio in corso...';
+            submitBtn.disabled = true;
+            
+            const formData = new FormData(event.target);
+            const firstName = formData.get('firstName');
+            const lastName = formData.get('lastName');
+            const email = formData.get('email');
+            const message = formData.get('message');
+            
+            if (!firstName || !lastName || !email || !message) {
+                alert('Per favore, compila tutti i campi obbligatori.');
+                resetButton(submitBtn, originalText);
+                return;
+            }
+            
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Per favore, inserisci un indirizzo email valido.');
+                resetButton(submitBtn, originalText);
+                return;
+            }
+            
+            const templateParams = {
+                from_name: `${firstName} ${lastName}`,
+                from_email: email,
+                message: message,
+                to_name: 'Gabry Amoruso',
+                reply_to: email
+            };
+            
+            emailjs.send('service_gt1tvdl', 'template_1nh34fw', templateParams)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    alert(`✅ Grazie ${firstName} ${lastName}!\n\nIl tuo messaggio è stato inviato con successo.\nTi risponderò presto all'indirizzo ${email}.\n\nMessaggio inviato: "${message}"`);
+                    
+                    document.getElementById('contact-form').reset();
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    alert('❌ Si è verificato un errore durante l\'invio del messaggio.\n\nPer favore, riprova più tardi o contattami direttamente via email:\ngabry.amoruso@gmail.com');
+                })
+                .finally(function() {
+                    resetButton(submitBtn, originalText);
+                });
+        }
+        
+        function resetButton(button, originalText) {
+            button.textContent = originalText;
+            button.disabled = false;
+        }
+    </script>
+</body>
+</html>

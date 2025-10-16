@@ -92,7 +92,7 @@ header .menu-btn {
 }
 
 header .menu-btn:checked ~ .menu{
-    max-height: 240px;
+    max-height: 260px;
 }
 
 header .menu-btn:checked + .menu-icon .menu-icon-bar {
@@ -124,7 +124,7 @@ header .menu-btn:checked + .menu-icon .menu-icon-bar::after {
 }
 .showcase {
     height: 100vh;
-    background: url('/assets/img/pexels-jievani-64453116-8185629.jpg') no-repeat center center/cover;
+    background: url('../img/pexels-jievani-64453116-8185629.jpg') no-repeat center center/cover;
     text-align: center;
     color: rgb(0, 0, 0);
     padding-top: 160px;
@@ -141,6 +141,37 @@ header .menu-btn:checked + .menu-icon .menu-icon-bar::after {
     display: inline-block;
     padding: 20px;
     border-radius: 10px;
+}
+
+.github-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.github-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.github-logo:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+.github-logo img {
+    height: 40px;
+    width: 40px;
+    filter: brightness(0) invert(1) brightness(0);
+    transition: filter 0.3s ease;
+}
+
+.github-logo:hover img {
+    filter: brightness(0) invert(1) brightness(0.8);
 }
 
 .about {
@@ -165,10 +196,15 @@ header .menu-btn:checked + .menu-icon .menu-icon-bar::after {
     height: auto;
 }
 
+.projects-row {
+    margin-top: 40px !important;
+    padding-top: 40px !important;
+}
+
 .project-item1 {
-    background: url('/assets/img/blockchain\ basata\ su\ ethereum\ in\ un\ contesto\ food.jpg') no-repeat center center/cover;
+    background: url('../img/blockchain\ basata\ su\ ethereum\ in\ un\ contesto\ food.jpg') no-repeat center center/cover;
     background-color: #212121;
-    margin: 70px 40px;
+    margin: 0 20px 40px 20px;
     padding: 20px;
     border-radius: 10px;
     color: black;
@@ -180,9 +216,9 @@ header .menu-btn:checked + .menu-icon .menu-icon-bar::after {
 }
 
 .project-item2 {
-    background: url('/assets/img/aHR0cHM6Ly9lbGVtZW50YWxzLWltYWdlcy5henVraS5jb20vN2E3YWEyZWEtZTQ5Yi00OGJmLWFiYTYtMGU3YzRmYmIzNDBhLnBuZw==.avif') no-repeat center center/cover;
+    background: url('../img/aHR0cHM6Ly9lbGVtZW50YWxzLWltYWdlcy5henVraS5jb20vN2E3YWEyZWEtZTQ5Yi00OGJmLWFiYTYtMGU3YzRmYmIzNDBhLnBuZw==.avif') no-repeat center center/cover;
     background-color: #212121;
-    margin: 70px 40px;
+    margin: 0 20px 40px 20px;
     padding: 20px;
     border-radius: 10px;
     color: black;
@@ -204,4 +240,126 @@ header .menu-btn:checked + .menu-icon .menu-icon-bar::after {
 .project-item1:hover, .project-item2:hover {
     box-shadow: 4px 4px 8px rgba(0, 0, 0, .3);
     transform: scale(1.05);
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #212121;
+    color: grey;
+    padding: 40px 20px 20px 20px;
+    border-top: 1px solid #333;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-section h3 {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.footer-section h4 {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.footer-section p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #181818;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+.social-links img {
+    filter: brightness(0) invert(1);
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.social-icon {
+    font-size: 20px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: grey;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.footer-tech {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    color: #888;
+}
+
+.footer-copyright {
+    font-size: 0.8em;
+    color: #666;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    .footer-tech {
+        font-size: 0.8em;
+    }
 }
