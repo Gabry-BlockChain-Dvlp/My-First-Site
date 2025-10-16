@@ -63,11 +63,6 @@ My-First-Site/
 - **Animazioni CSS** - Hover effects e transizioni fluide
 - **Accessibilità** - Struttura semantica e contrasti appropriati
 
-## 🚀 Deployment
-
-Il sito è pubblicato su **GitHub Pages** e si aggiorna automaticamente ad ogni push sul branch `main`.
-
-
 ## 📱 Responsive Breakpoints
 
 - **Mobile**: < 768px
